@@ -1,0 +1,5 @@
+->getCurrentFocus
+->getSystemService
+->getWindowToken
+->getColor
+->hideSoftInputFromWindow

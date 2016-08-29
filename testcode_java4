@@ -1,0 +1,29 @@
+public View getView(int position, View convertView, ViewGroup parent) {
+        if(convertView == null) {
+		            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+					            convertView = inflater.inflate(R.layout.day_view_item, parent, false);
+								        }
+										        Log.d("DayViewActivity", "Position is: "+position);
+												        ((TextView)convertView.findViewById(R.id.day_hour_side)).setText(array[position]);
+														        LinearLayout layout = (LinearLayout)convertView.findViewById(R.id.day_event_layout);
+
+																        //layout.addView(new EventFrame(parent.getContext()));
+
+																		        TextView create = new TextView(DayViewActivity.this);
+																				        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 62, getResources().getDisplayMetrics()), 1.0f);
+																						        params.topMargin = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
+																								        params.bottomMargin = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, getResources().getDisplayMetrics());
+																										        create.setLayoutParams(params);
+																												        create.setBackgroundColor(Color.BLUE);
+																														        create.setText("Test"); 
+																																        //the following is my original LinearLayout.LayoutParams for correctly setting the TextView Height
+																																		        //new LinearLayout.LayoutParams(0, (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 60, getResources().getDisplayMetrics()), 1.0f)   
+																																				        if(position == 0) {
+																																						            Log.d("DayViewActivity", "This should only be running when position is 0. The position is: "+position);
+																																									            layout.addView(create);
+																																												        }
+
+																																														        return convertView;
+																																																    }
+
+																																																	}

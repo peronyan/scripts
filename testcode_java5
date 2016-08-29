@@ -1,0 +1,24 @@
+public View getView(final int position, View convertView, ViewGroup parent)
+{
+    System.out.println("getview:"+position+" "+convertView);
+	    View row=convertView;
+		    if(row==null)
+			    {
+				        LayoutInflater inflater=((Activity)context).getLayoutInflater();
+						        row=inflater.inflate(layoutResourceId, parent,false);
+
+								        holder=new PakistaniDrama();
+										        holder.tvDramaName=(TextView)row.findViewById(R.id.dramaName);
+												        holder.cbCheck=(CheckBox)row.findViewById(R.id.checkBox);
+
+														        row.setTag(holder);
+
+																    }
+																	    else
+																		    {
+																			        holder=(PakistaniDrama)row.getTag();
+																					    }
+																						            holder.tvDramaName.setText(dramaList.get(position).getDramaName());
+																									    holder.cbCheck.setChecked(checks.get(position));
+																										            return row;
+																													    }
