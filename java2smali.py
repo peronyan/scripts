@@ -18,18 +18,21 @@ def checkBracket(code):
 		match2= intenBracketPattern.search(code)
 		if match2:
 			replaceText = match2.group()
+
+			#両端の括弧を外す
 			text = replaceText[:-1]
 			text = text[1:]
 			argumentList = text.split(',')
 			for argument in argumentList:
+				argu = argument.split('.')
+				for arg in argu:
+					arg = arg.strip()
 				#引数の中からメソッドでないものを消す
-				if argument.find("(") == -1:
-					continue
-				checkBracket(argument)
-			#code1 = checkBracket(text)
-			#print "code1:"+ code1
+					if arg.find("(") == -1 and arg.find(")") == -1:
+						continue
+					checkBracket(arg)
 			code = code.replace(replaceText,'')
-			match1 = False
+			#match1 = False
 		if match1:
 			replaceText = match1.group()
 			code = code.replace(replaceText,'')
