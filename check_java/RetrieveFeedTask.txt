@@ -1,0 +1,10 @@
+->newSAXParser
+URL;-><init>
+RssHandler;-><init>
+->setContentHandler
+->openStream
+->newInstance
+->getXMLReader
+InputSource;-><init>
+->parse
+->getFeed
